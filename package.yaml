@@ -1,0 +1,20 @@
+name:                datalog
+version:             0.1.0.0
+#synopsis:
+#description:
+homepage:            https://github.com/hawnzug/datalog#readme
+license:             BSD3
+author:              hawnzug
+maintainer:          hawnzug@gmail.com
+copyright:           hawnzug
+category:            Web
+extra-source-files:
+- README.md
+
+dependencies:
+  - base >= 4.7 && < 5
+
+executables:
+  datalog:
+    source-dirs:      src
+    main:             Main.hs
