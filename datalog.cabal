@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: a578ef8a1b5fb25791ed121a7da3bc67c7117eb4a7c92ff33be0af1ce01dcdeb
+-- hash: d85eef9ca16545f066d6445fd21206dcb443baa6aae0bf7d46ef6b6f356e4a9f
 
 name:           datalog
 version:        0.1.0.0
@@ -21,9 +21,14 @@ extra-source-files:
 executable datalog
   main-is: Main.hs
   other-modules:
+      Core
       Paths_datalog
   hs-source-dirs:
       src
   build-depends:
-      base >=4.7 && <5
+      array
+    , base >=4.7 && <5
+    , containers
+    , text
+    , vector
   default-language: Haskell2010
