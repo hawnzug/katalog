@@ -10,7 +10,7 @@ main :: IO ()
 main = do
   args <- getArgs
   if null args
-  then putStrLn "Usage: datalog FILENAME"
+  then putStrLn "Usage: katalog FILENAME"
   else do
     let filename = head args
     input <- Text.IO.readFile filename

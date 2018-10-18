@@ -2,12 +2,12 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: dc85993c7040049e82a8404e3f522443a5734089747407073c3d62fc884b37cb
+-- hash: 6e29d52ba679b0e935351a42ff65f04c4a83059a5b99e2d64b7cd7a81d20a952
 
-name:           datalog
+name:           katalog
 version:        0.1.0.0
 category:       Web
-homepage:       https://github.com/hawnzug/datalog#readme
+homepage:       https://github.com/hawnzug/katalog#readme
 author:         hawnzug
 maintainer:     hawnzug@gmail.com
 copyright:      hawnzug
@@ -18,14 +18,14 @@ cabal-version:  >= 1.10
 extra-source-files:
     README.md
 
-executable datalog
+executable katalog
   main-is: Main.hs
   other-modules:
       Core
       Parser
       Preprocess
       SemiNaive
-      Paths_datalog
+      Paths_katalog
   hs-source-dirs:
       src
   build-depends:
@@ -33,6 +33,7 @@ executable datalog
     , containers
     , megaparsec
     , parser-combinators
+    , pretty-simple
     , text
     , vector
   default-language: Haskell2010
