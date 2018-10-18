@@ -14,9 +14,10 @@ extra-source-files:
 dependencies:
   - base >= 4.7 && < 5
   - vector
-  - array
   - text
   - containers
+  - megaparsec
+  - parser-combinators
 
 executables:
   datalog:

@@ -1,5 +1,21 @@
 module Main where
 
+import Parser (parse)
+import Preprocess (preprocess)
+import SemiNaive (run)
+import qualified Data.Text.IO as Text.IO
+import System.Environment (getArgs)
+
 main :: IO ()
 main = do
-  putStrLn "hello world"
+  args <- getArgs
+  if null args
+  then putStrLn "Usage: datalog FILENAME"
+  else do
+    let filename = head args
+    input <- Text.IO.readFile filename
+    case parse filename input of
+      Left err -> putStr err
+      Right clauses -> do
+        let (db, rules) = preprocess clauses
+        print $ run db rules

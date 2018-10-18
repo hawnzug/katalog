@@ -1,0 +1,11 @@
+up(aa, ab).
+up(ab, ac).
+up(ac, ad).
+
+up(ba, bb).
+up(bb, bc).
+up(bc, bd).
+
+same(ab, bb).
+same(A, B) :- up(A, C), up(B, D), same(C, D).
+same(C, D) :- up(A, C), up(B, D), same(A, B).
