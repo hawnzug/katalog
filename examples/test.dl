@@ -1,6 +1,6 @@
-parent(alice, bob).
-parent(bob, jack).
-parent(jack, john).
+parent(a, b).
+parent(b, c).
+parent(c, d).
 
 ancestor(A, B) :- parent(A, B).
 ancestor(A, C) :- ancestor(A, B), ancestor(B, C).

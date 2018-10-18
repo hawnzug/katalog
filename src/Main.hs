@@ -2,10 +2,11 @@ module Main where
 
 import Parser (parse)
 import Preprocess (preprocess)
-import SemiNaive (run)
+import SemiNaive (run, match)
 import qualified Data.Text.IO as Text.IO
 import System.Environment (getArgs)
-import Pretty (putDatabase)
+import Control.Monad (forM_)
+import Pretty (putDatabase, putRelation, putQuery)
 
 main :: IO ()
 main = do
@@ -17,6 +18,13 @@ main = do
     input <- Text.IO.readFile filename
     case parse filename input of
       Left err -> putStr err
-      Right clauses -> do
+      Right (queries, clauses) -> do
         let (db, rules) = preprocess clauses
-        putDatabase $ run db rules
+        let newdb = run db rules
+        putDatabase newdb
+        putStrLn ""
+        forM_ queries $ \query -> do
+          putQuery query
+          putStrLn ""
+          putRelation $ match newdb query
+          putStrLn ""

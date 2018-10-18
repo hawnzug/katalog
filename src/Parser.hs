@@ -5,6 +5,7 @@ import Control.Monad.Combinators
 import Core (Parameter, Predicate(..), Clause(..))
 import Data.Text (Text)
 import Data.Char (isLower)
+import Data.Either (partitionEithers)
 import qualified Data.Text as Text
 import qualified Text.Megaparsec as Mega
 import qualified Text.Megaparsec.Char as Mega.Char
@@ -50,10 +51,17 @@ clause = do
   symbol "."
   return $ Clause hd tl
 
-wholeParser :: Parser [Clause]
-wholeParser = between spaceConsumer Mega.eof (many clause)
+type Query = [Predicate]
+query :: Parser Query
+query = predicate `sepBy1` symbol "," <* symbol "?"
 
-parse :: String -> Text -> Either String [Clause]
+line :: Parser (Either Query Clause)
+line = (Left <$> Mega.try query) <|> (Right <$> clause)
+
+wholeParser :: Parser [Either Query Clause]
+wholeParser = between spaceConsumer Mega.eof (many line)
+
+parse :: String -> Text -> Either String ([Query], [Clause])
 parse filename input = case Mega.parse wholeParser filename input of
   Left err -> Left (Mega.Error.parseErrorPretty err)
-  Right cs -> Right cs
+  Right cs -> Right $ partitionEithers cs

@@ -28,3 +28,9 @@ prettyDatabase db = vsep rels
 
 putDatabase :: Database -> IO ()
 putDatabase = putDoc . prettyDatabase
+
+putRelation :: Relation -> IO ()
+putRelation = putDoc . prettyRelation
+
+putQuery :: [Predicate] -> IO ()
+putQuery ps = putDoc $ sep $ punctuate comma (pretty <$> ps)
