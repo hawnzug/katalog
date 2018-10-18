@@ -5,6 +5,7 @@ import Preprocess (preprocess)
 import SemiNaive (run)
 import qualified Data.Text.IO as Text.IO
 import System.Environment (getArgs)
+import Pretty (putDatabase)
 
 main :: IO ()
 main = do
@@ -18,4 +19,4 @@ main = do
       Left err -> putStr err
       Right clauses -> do
         let (db, rules) = preprocess clauses
-        print $ run db rules
+        putDatabase $ run db rules

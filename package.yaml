@@ -18,6 +18,7 @@ dependencies:
   - containers
   - megaparsec
   - parser-combinators
+  - prettyprinter
 
 executables:
   katalog:

@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 6e29d52ba679b0e935351a42ff65f04c4a83059a5b99e2d64b7cd7a81d20a952
+-- hash: 29ebae5d9465d460b7d0d0ccb654dece5713d50be62e15c40c4b979e7cd2c685
 
 name:           katalog
 version:        0.1.0.0
@@ -24,6 +24,7 @@ executable katalog
       Core
       Parser
       Preprocess
+      Pretty
       SemiNaive
       Paths_katalog
   hs-source-dirs:
@@ -33,7 +34,7 @@ executable katalog
     , containers
     , megaparsec
     , parser-combinators
-    , pretty-simple
+    , prettyprinter
     , text
     , vector
   default-language: Haskell2010
