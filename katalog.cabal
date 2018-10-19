@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 29ebae5d9465d460b7d0d0ccb654dece5713d50be62e15c40c4b979e7cd2c685
+-- hash: 5b94a6519dd1f66f33b7b890370dddff01ef0b901e02ffec40d92fa8497d4714
 
 name:           katalog
 version:        0.1.0.0
@@ -18,23 +18,49 @@ cabal-version:  >= 1.10
 extra-source-files:
     README.md
 
-executable katalog
-  main-is: Main.hs
+library
+  exposed-modules:
+      Katalog.Core
+      Katalog.Main
+      Katalog.Parser
+      Katalog.Preprocess
+      Katalog.Pretty
+      Katalog.SemiNaive
   other-modules:
-      Core
-      Parser
-      Preprocess
-      Pretty
-      SemiNaive
       Paths_katalog
   hs-source-dirs:
       src
   build-depends:
-      base >=4.7 && <5
+      base
     , containers
     , megaparsec
     , parser-combinators
     , prettyprinter
     , text
     , vector
+  default-language: Haskell2010
+
+executable katalog
+  main-is: Main.hs
+  other-modules:
+      Paths_katalog
+  hs-source-dirs:
+      katalog
+  build-depends:
+      base
+    , katalog
+  default-language: Haskell2010
+
+test-suite katalog-tests
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  other-modules:
+      Paths_katalog
+  hs-source-dirs:
+      tests
+  build-depends:
+      base
+    , katalog
+    , tasty
+    , tasty-hunit
   default-language: Haskell2010

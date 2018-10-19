@@ -1,7 +1,7 @@
 {-# Language OverloadedStrings #-}
 {-# Language TupleSections #-}
 
-module Core where
+module Katalog.Core where
 
 import Data.Text (Text)
 import Data.Map (Map)

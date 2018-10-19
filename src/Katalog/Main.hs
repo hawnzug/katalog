@@ -1,12 +1,12 @@
-module Main where
+module Katalog.Main where
 
-import Parser (parse)
-import Preprocess (preprocess)
-import SemiNaive (run, match)
+import Katalog.Parser (parse)
+import Katalog.Preprocess (preprocess)
+import Katalog.Pretty (putDatabase, putRelation, putQuery)
+import Katalog.SemiNaive (run, match)
 import qualified Data.Text.IO as Text.IO
 import System.Environment (getArgs)
 import Control.Monad (forM_)
-import Pretty (putDatabase, putRelation, putQuery)
 
 main :: IO ()
 main = do

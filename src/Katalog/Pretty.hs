@@ -1,7 +1,7 @@
 {-# Language OverloadedStrings #-}
-module Pretty where
+module Katalog.Pretty where
 
-import Core
+import Katalog.Core
 import Data.Either (either)
 import qualified Data.Set as Set
 import qualified Data.Map as Map

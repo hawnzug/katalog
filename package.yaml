@@ -12,7 +12,11 @@ extra-source-files:
 - README.md
 
 dependencies:
-  - base >= 4.7 && < 5
+- base
+
+library:
+  source-dirs: src
+  dependencies:
   - vector
   - text
   - containers
@@ -22,5 +26,16 @@ dependencies:
 
 executables:
   katalog:
-    source-dirs:      src
+    source-dirs:      katalog
     main:             Main.hs
+    dependencies:
+    - katalog
+
+tests:
+  katalog-tests:
+    source-dirs: tests
+    main:        Main.hs
+    dependencies:
+    - tasty
+    - tasty-hunit
+    - katalog

@@ -1,8 +1,8 @@
 {-# Language OverloadedStrings #-}
-module Parser where
+module Katalog.Parser where
 
+import Katalog.Core (Parameter, Predicate(..), Clause(..))
 import Control.Monad.Combinators
-import Core (Parameter, Predicate(..), Clause(..))
 import Data.Text (Text)
 import Data.Char (isLower)
 import Data.Either (partitionEithers)

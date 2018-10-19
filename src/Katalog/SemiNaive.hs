@@ -1,5 +1,5 @@
 {-# Language OverloadedStrings #-}
-module SemiNaive where
+module Katalog.SemiNaive where
 
 import qualified Data.Map as Map
 import qualified Data.Set as Set
@@ -8,7 +8,7 @@ import Data.Text (Text)
 import Data.Map (Map)
 import Data.Either (lefts)
 
-import Core
+import Katalog.Core
 
 type TwoDB = (Database, Database)
 

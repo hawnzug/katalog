@@ -1,7 +1,7 @@
 {-# Language NamedFieldPuns #-}
-module Preprocess where
+module Katalog.Preprocess where
 
-import Core
+import Katalog.Core
 
 import Data.Either (lefts)
 import Data.Text (Text)
