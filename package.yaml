@@ -36,6 +36,10 @@ tests:
     source-dirs: tests
     main:        Main.hs
     dependencies:
+    - text
+    - containers
     - tasty
     - tasty-hunit
+    - tasty-quickcheck
+    - QuickCheck
     - katalog

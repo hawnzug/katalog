@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 5b94a6519dd1f66f33b7b890370dddff01ef0b901e02ffec40d92fa8497d4714
+-- hash: 34ba1bd4f8ac99b8776a1a56b4cb67c4dc604a3dec762bd179abe2cabd5c6435
 
 name:           katalog
 version:        0.1.0.0
@@ -55,12 +55,20 @@ test-suite katalog-tests
   type: exitcode-stdio-1.0
   main-is: Main.hs
   other-modules:
+      Core
+      Preprocess
+      SemiNaive
+      Utils
       Paths_katalog
   hs-source-dirs:
       tests
   build-depends:
-      base
+      QuickCheck
+    , base
+    , containers
     , katalog
     , tasty
     , tasty-hunit
+    , tasty-quickcheck
+    , text
   default-language: Haskell2010

@@ -23,12 +23,12 @@ type Parameter = Either Variable Literal
 data Clause = Clause
   { clauseHead :: Predicate
   , clauseBody :: [Predicate]
-  } deriving (Show)
+  } deriving (Show, Eq, Ord)
 
 data Predicate = Predicate
   { predicateName :: Text
   , predicateParams :: [Parameter]
-  } deriving (Show)
+  } deriving (Show, Eq, Ord)
 
 type Database = Map Text Relation
 

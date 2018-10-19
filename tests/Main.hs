@@ -1,8 +1,14 @@
 import Test.Tasty
-import Test.Tasty.HUnit
+
+import Core
+import Preprocess
+import SemiNaive
 
 main = defaultMain tests
 
 tests :: TestTree
-tests = testGroup "Unit tests"
-  [ testCase "List length" $ length [1, 2, 3] @?= 3 ]
+tests = testGroup "Inner tests"
+  [ coreTests
+  , preprocessTests
+  , semiNaiveTests
+  ]
