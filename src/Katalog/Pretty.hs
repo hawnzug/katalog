@@ -6,7 +6,8 @@ import Data.Either (either)
 import qualified Data.Set as Set
 import qualified Data.Map as Map
 import Data.Text.Prettyprint.Doc
-import Data.Text.Prettyprint.Doc.Render.Text (putDoc)
+import Data.Text.Prettyprint.Doc.Render.Text (renderLazy)
+import Data.Text.Lazy (Text)
 
 instance Pretty Predicate where
   pretty (Predicate name params) = pretty name <> parens (sep p)
@@ -26,11 +27,13 @@ prettyDatabase db = vsep rels
     rels = concatMap f $ Map.assocs db
     f (name, rel) = [pretty name, indent 4 $ prettyRelation rel, emptyDoc]
 
-putDatabase :: Database -> IO ()
-putDatabase = putDoc . prettyDatabase
+render = renderLazy . layoutPretty defaultLayoutOptions
 
-putRelation :: Relation -> IO ()
-putRelation = putDoc . prettyRelation
+renderDatabase :: Database -> Text
+renderDatabase = render . prettyDatabase
 
-putQuery :: [Predicate] -> IO ()
-putQuery ps = putDoc $ sep $ punctuate comma (pretty <$> ps)
+renderRelation :: Relation -> Text
+renderRelation = render . prettyRelation
+
+renderQuery :: [Predicate] -> Text
+renderQuery ps = render $ sep $ punctuate comma (pretty <$> ps)

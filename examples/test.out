@@ -1,0 +1,11 @@
+ancestor(A, B)
+a b
+a c
+a d
+b c
+b d
+c d
+ancestor(a, B)
+b
+c
+d

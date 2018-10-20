@@ -37,9 +37,11 @@ tests:
     main:        Main.hs
     dependencies:
     - text
+    - filepath
     - containers
     - tasty
     - tasty-hunit
+    - tasty-golden
     - tasty-quickcheck
     - QuickCheck
     - katalog

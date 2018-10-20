@@ -4,3 +4,6 @@ parent(c, d).
 
 ancestor(A, B) :- parent(A, B).
 ancestor(A, C) :- ancestor(A, B), ancestor(B, C).
+
+ancestor(A, B)?
+ancestor(a, B)?

@@ -1,0 +1,1184 @@
+subset(a, a).
+subset(a, ab).
+subset(a, ac).
+subset(a, abc).
+subset(a, ad).
+subset(a, abd).
+subset(a, acd).
+subset(a, abcd).
+subset(a, ae).
+subset(a, abe).
+subset(a, ace).
+subset(a, abce).
+subset(a, ade).
+subset(a, abde).
+subset(a, acde).
+subset(a, abcde).
+subset(b, b).
+subset(b, ab).
+subset(b, bc).
+subset(b, abc).
+subset(b, bd).
+subset(b, abd).
+subset(b, bcd).
+subset(b, abcd).
+subset(b, be).
+subset(b, abe).
+subset(b, bce).
+subset(b, abce).
+subset(b, bde).
+subset(b, abde).
+subset(b, bcde).
+subset(b, abcde).
+subset(ab, ab).
+subset(ab, abc).
+subset(ab, abd).
+subset(ab, abcd).
+subset(ab, abe).
+subset(ab, abce).
+subset(ab, abde).
+subset(ab, abcde).
+subset(c, c).
+subset(c, ac).
+subset(c, bc).
+subset(c, abc).
+subset(c, cd).
+subset(c, acd).
+subset(c, bcd).
+subset(c, abcd).
+subset(c, ce).
+subset(c, ace).
+subset(c, bce).
+subset(c, abce).
+subset(c, cde).
+subset(c, acde).
+subset(c, bcde).
+subset(c, abcde).
+subset(ac, ac).
+subset(ac, abc).
+subset(ac, acd).
+subset(ac, abcd).
+subset(ac, ace).
+subset(ac, abce).
+subset(ac, acde).
+subset(ac, abcde).
+subset(bc, bc).
+subset(bc, abc).
+subset(bc, bcd).
+subset(bc, abcd).
+subset(bc, bce).
+subset(bc, abce).
+subset(bc, bcde).
+subset(bc, abcde).
+subset(abc, abc).
+subset(abc, abcd).
+subset(abc, abce).
+subset(abc, abcde).
+subset(d, d).
+subset(d, ad).
+subset(d, bd).
+subset(d, abd).
+subset(d, cd).
+subset(d, acd).
+subset(d, bcd).
+subset(d, abcd).
+subset(d, de).
+subset(d, ade).
+subset(d, bde).
+subset(d, abde).
+subset(d, cde).
+subset(d, acde).
+subset(d, bcde).
+subset(d, abcde).
+subset(ad, ad).
+subset(ad, abd).
+subset(ad, acd).
+subset(ad, abcd).
+subset(ad, ade).
+subset(ad, abde).
+subset(ad, acde).
+subset(ad, abcde).
+subset(bd, bd).
+subset(bd, abd).
+subset(bd, bcd).
+subset(bd, abcd).
+subset(bd, bde).
+subset(bd, abde).
+subset(bd, bcde).
+subset(bd, abcde).
+subset(abd, abd).
+subset(abd, abcd).
+subset(abd, abde).
+subset(abd, abcde).
+subset(cd, cd).
+subset(cd, acd).
+subset(cd, bcd).
+subset(cd, abcd).
+subset(cd, cde).
+subset(cd, acde).
+subset(cd, bcde).
+subset(cd, abcde).
+subset(acd, acd).
+subset(acd, abcd).
+subset(acd, acde).
+subset(acd, abcde).
+subset(bcd, bcd).
+subset(bcd, abcd).
+subset(bcd, bcde).
+subset(bcd, abcde).
+subset(abcd, abcd).
+subset(abcd, abcde).
+subset(e, e).
+subset(e, ae).
+subset(e, be).
+subset(e, abe).
+subset(e, ce).
+subset(e, ace).
+subset(e, bce).
+subset(e, abce).
+subset(e, de).
+subset(e, ade).
+subset(e, bde).
+subset(e, abde).
+subset(e, cde).
+subset(e, acde).
+subset(e, bcde).
+subset(e, abcde).
+subset(ae, ae).
+subset(ae, abe).
+subset(ae, ace).
+subset(ae, abce).
+subset(ae, ade).
+subset(ae, abde).
+subset(ae, acde).
+subset(ae, abcde).
+subset(be, be).
+subset(be, abe).
+subset(be, bce).
+subset(be, abce).
+subset(be, bde).
+subset(be, abde).
+subset(be, bcde).
+subset(be, abcde).
+subset(abe, abe).
+subset(abe, abce).
+subset(abe, abde).
+subset(abe, abcde).
+subset(ce, ce).
+subset(ce, ace).
+subset(ce, bce).
+subset(ce, abce).
+subset(ce, cde).
+subset(ce, acde).
+subset(ce, bcde).
+subset(ce, abcde).
+subset(ace, ace).
+subset(ace, abce).
+subset(ace, acde).
+subset(ace, abcde).
+subset(bce, bce).
+subset(bce, abce).
+subset(bce, bcde).
+subset(bce, abcde).
+subset(abce, abce).
+subset(abce, abcde).
+subset(de, de).
+subset(de, ade).
+subset(de, bde).
+subset(de, abde).
+subset(de, cde).
+subset(de, acde).
+subset(de, bcde).
+subset(de, abcde).
+subset(ade, ade).
+subset(ade, abde).
+subset(ade, acde).
+subset(ade, abcde).
+subset(bde, bde).
+subset(bde, abde).
+subset(bde, bcde).
+subset(bde, abcde).
+subset(abde, abde).
+subset(abde, abcde).
+subset(cde, cde).
+subset(cde, acde).
+subset(cde, bcde).
+subset(cde, abcde).
+subset(acde, acde).
+subset(acde, abcde).
+subset(bcde, bcde).
+subset(bcde, abcde).
+subset(abcde, abcde).
+union(a, a, a).
+union(a, b, ab).
+union(a, ab, ab).
+union(a, c, ac).
+union(a, ac, ac).
+union(a, bc, abc).
+union(a, abc, abc).
+union(a, d, ad).
+union(a, ad, ad).
+union(a, bd, abd).
+union(a, abd, abd).
+union(a, cd, acd).
+union(a, acd, acd).
+union(a, bcd, abcd).
+union(a, abcd, abcd).
+union(a, e, ae).
+union(a, ae, ae).
+union(a, be, abe).
+union(a, abe, abe).
+union(a, ce, ace).
+union(a, ace, ace).
+union(a, bce, abce).
+union(a, abce, abce).
+union(a, de, ade).
+union(a, ade, ade).
+union(a, bde, abde).
+union(a, abde, abde).
+union(a, cde, acde).
+union(a, acde, acde).
+union(a, bcde, abcde).
+union(a, abcde, abcde).
+union(b, a, ab).
+union(b, b, b).
+union(b, ab, ab).
+union(b, c, bc).
+union(b, ac, abc).
+union(b, bc, bc).
+union(b, abc, abc).
+union(b, d, bd).
+union(b, ad, abd).
+union(b, bd, bd).
+union(b, abd, abd).
+union(b, cd, bcd).
+union(b, acd, abcd).
+union(b, bcd, bcd).
+union(b, abcd, abcd).
+union(b, e, be).
+union(b, ae, abe).
+union(b, be, be).
+union(b, abe, abe).
+union(b, ce, bce).
+union(b, ace, abce).
+union(b, bce, bce).
+union(b, abce, abce).
+union(b, de, bde).
+union(b, ade, abde).
+union(b, bde, bde).
+union(b, abde, abde).
+union(b, cde, bcde).
+union(b, acde, abcde).
+union(b, bcde, bcde).
+union(b, abcde, abcde).
+union(ab, a, ab).
+union(ab, b, ab).
+union(ab, ab, ab).
+union(ab, c, abc).
+union(ab, ac, abc).
+union(ab, bc, abc).
+union(ab, abc, abc).
+union(ab, d, abd).
+union(ab, ad, abd).
+union(ab, bd, abd).
+union(ab, abd, abd).
+union(ab, cd, abcd).
+union(ab, acd, abcd).
+union(ab, bcd, abcd).
+union(ab, abcd, abcd).
+union(ab, e, abe).
+union(ab, ae, abe).
+union(ab, be, abe).
+union(ab, abe, abe).
+union(ab, ce, abce).
+union(ab, ace, abce).
+union(ab, bce, abce).
+union(ab, abce, abce).
+union(ab, de, abde).
+union(ab, ade, abde).
+union(ab, bde, abde).
+union(ab, abde, abde).
+union(ab, cde, abcde).
+union(ab, acde, abcde).
+union(ab, bcde, abcde).
+union(ab, abcde, abcde).
+union(c, a, ac).
+union(c, b, bc).
+union(c, ab, abc).
+union(c, c, c).
+union(c, ac, ac).
+union(c, bc, bc).
+union(c, abc, abc).
+union(c, d, cd).
+union(c, ad, acd).
+union(c, bd, bcd).
+union(c, abd, abcd).
+union(c, cd, cd).
+union(c, acd, acd).
+union(c, bcd, bcd).
+union(c, abcd, abcd).
+union(c, e, ce).
+union(c, ae, ace).
+union(c, be, bce).
+union(c, abe, abce).
+union(c, ce, ce).
+union(c, ace, ace).
+union(c, bce, bce).
+union(c, abce, abce).
+union(c, de, cde).
+union(c, ade, acde).
+union(c, bde, bcde).
+union(c, abde, abcde).
+union(c, cde, cde).
+union(c, acde, acde).
+union(c, bcde, bcde).
+union(c, abcde, abcde).
+union(ac, a, ac).
+union(ac, b, abc).
+union(ac, ab, abc).
+union(ac, c, ac).
+union(ac, ac, ac).
+union(ac, bc, abc).
+union(ac, abc, abc).
+union(ac, d, acd).
+union(ac, ad, acd).
+union(ac, bd, abcd).
+union(ac, abd, abcd).
+union(ac, cd, acd).
+union(ac, acd, acd).
+union(ac, bcd, abcd).
+union(ac, abcd, abcd).
+union(ac, e, ace).
+union(ac, ae, ace).
+union(ac, be, abce).
+union(ac, abe, abce).
+union(ac, ce, ace).
+union(ac, ace, ace).
+union(ac, bce, abce).
+union(ac, abce, abce).
+union(ac, de, acde).
+union(ac, ade, acde).
+union(ac, bde, abcde).
+union(ac, abde, abcde).
+union(ac, cde, acde).
+union(ac, acde, acde).
+union(ac, bcde, abcde).
+union(ac, abcde, abcde).
+union(bc, a, abc).
+union(bc, b, bc).
+union(bc, ab, abc).
+union(bc, c, bc).
+union(bc, ac, abc).
+union(bc, bc, bc).
+union(bc, abc, abc).
+union(bc, d, bcd).
+union(bc, ad, abcd).
+union(bc, bd, bcd).
+union(bc, abd, abcd).
+union(bc, cd, bcd).
+union(bc, acd, abcd).
+union(bc, bcd, bcd).
+union(bc, abcd, abcd).
+union(bc, e, bce).
+union(bc, ae, abce).
+union(bc, be, bce).
+union(bc, abe, abce).
+union(bc, ce, bce).
+union(bc, ace, abce).
+union(bc, bce, bce).
+union(bc, abce, abce).
+union(bc, de, bcde).
+union(bc, ade, abcde).
+union(bc, bde, bcde).
+union(bc, abde, abcde).
+union(bc, cde, bcde).
+union(bc, acde, abcde).
+union(bc, bcde, bcde).
+union(bc, abcde, abcde).
+union(abc, a, abc).
+union(abc, b, abc).
+union(abc, ab, abc).
+union(abc, c, abc).
+union(abc, ac, abc).
+union(abc, bc, abc).
+union(abc, abc, abc).
+union(abc, d, abcd).
+union(abc, ad, abcd).
+union(abc, bd, abcd).
+union(abc, abd, abcd).
+union(abc, cd, abcd).
+union(abc, acd, abcd).
+union(abc, bcd, abcd).
+union(abc, abcd, abcd).
+union(abc, e, abce).
+union(abc, ae, abce).
+union(abc, be, abce).
+union(abc, abe, abce).
+union(abc, ce, abce).
+union(abc, ace, abce).
+union(abc, bce, abce).
+union(abc, abce, abce).
+union(abc, de, abcde).
+union(abc, ade, abcde).
+union(abc, bde, abcde).
+union(abc, abde, abcde).
+union(abc, cde, abcde).
+union(abc, acde, abcde).
+union(abc, bcde, abcde).
+union(abc, abcde, abcde).
+union(d, a, ad).
+union(d, b, bd).
+union(d, ab, abd).
+union(d, c, cd).
+union(d, ac, acd).
+union(d, bc, bcd).
+union(d, abc, abcd).
+union(d, d, d).
+union(d, ad, ad).
+union(d, bd, bd).
+union(d, abd, abd).
+union(d, cd, cd).
+union(d, acd, acd).
+union(d, bcd, bcd).
+union(d, abcd, abcd).
+union(d, e, de).
+union(d, ae, ade).
+union(d, be, bde).
+union(d, abe, abde).
+union(d, ce, cde).
+union(d, ace, acde).
+union(d, bce, bcde).
+union(d, abce, abcde).
+union(d, de, de).
+union(d, ade, ade).
+union(d, bde, bde).
+union(d, abde, abde).
+union(d, cde, cde).
+union(d, acde, acde).
+union(d, bcde, bcde).
+union(d, abcde, abcde).
+union(ad, a, ad).
+union(ad, b, abd).
+union(ad, ab, abd).
+union(ad, c, acd).
+union(ad, ac, acd).
+union(ad, bc, abcd).
+union(ad, abc, abcd).
+union(ad, d, ad).
+union(ad, ad, ad).
+union(ad, bd, abd).
+union(ad, abd, abd).
+union(ad, cd, acd).
+union(ad, acd, acd).
+union(ad, bcd, abcd).
+union(ad, abcd, abcd).
+union(ad, e, ade).
+union(ad, ae, ade).
+union(ad, be, abde).
+union(ad, abe, abde).
+union(ad, ce, acde).
+union(ad, ace, acde).
+union(ad, bce, abcde).
+union(ad, abce, abcde).
+union(ad, de, ade).
+union(ad, ade, ade).
+union(ad, bde, abde).
+union(ad, abde, abde).
+union(ad, cde, acde).
+union(ad, acde, acde).
+union(ad, bcde, abcde).
+union(ad, abcde, abcde).
+union(bd, a, abd).
+union(bd, b, bd).
+union(bd, ab, abd).
+union(bd, c, bcd).
+union(bd, ac, abcd).
+union(bd, bc, bcd).
+union(bd, abc, abcd).
+union(bd, d, bd).
+union(bd, ad, abd).
+union(bd, bd, bd).
+union(bd, abd, abd).
+union(bd, cd, bcd).
+union(bd, acd, abcd).
+union(bd, bcd, bcd).
+union(bd, abcd, abcd).
+union(bd, e, bde).
+union(bd, ae, abde).
+union(bd, be, bde).
+union(bd, abe, abde).
+union(bd, ce, bcde).
+union(bd, ace, abcde).
+union(bd, bce, bcde).
+union(bd, abce, abcde).
+union(bd, de, bde).
+union(bd, ade, abde).
+union(bd, bde, bde).
+union(bd, abde, abde).
+union(bd, cde, bcde).
+union(bd, acde, abcde).
+union(bd, bcde, bcde).
+union(bd, abcde, abcde).
+union(abd, a, abd).
+union(abd, b, abd).
+union(abd, ab, abd).
+union(abd, c, abcd).
+union(abd, ac, abcd).
+union(abd, bc, abcd).
+union(abd, abc, abcd).
+union(abd, d, abd).
+union(abd, ad, abd).
+union(abd, bd, abd).
+union(abd, abd, abd).
+union(abd, cd, abcd).
+union(abd, acd, abcd).
+union(abd, bcd, abcd).
+union(abd, abcd, abcd).
+union(abd, e, abde).
+union(abd, ae, abde).
+union(abd, be, abde).
+union(abd, abe, abde).
+union(abd, ce, abcde).
+union(abd, ace, abcde).
+union(abd, bce, abcde).
+union(abd, abce, abcde).
+union(abd, de, abde).
+union(abd, ade, abde).
+union(abd, bde, abde).
+union(abd, abde, abde).
+union(abd, cde, abcde).
+union(abd, acde, abcde).
+union(abd, bcde, abcde).
+union(abd, abcde, abcde).
+union(cd, a, acd).
+union(cd, b, bcd).
+union(cd, ab, abcd).
+union(cd, c, cd).
+union(cd, ac, acd).
+union(cd, bc, bcd).
+union(cd, abc, abcd).
+union(cd, d, cd).
+union(cd, ad, acd).
+union(cd, bd, bcd).
+union(cd, abd, abcd).
+union(cd, cd, cd).
+union(cd, acd, acd).
+union(cd, bcd, bcd).
+union(cd, abcd, abcd).
+union(cd, e, cde).
+union(cd, ae, acde).
+union(cd, be, bcde).
+union(cd, abe, abcde).
+union(cd, ce, cde).
+union(cd, ace, acde).
+union(cd, bce, bcde).
+union(cd, abce, abcde).
+union(cd, de, cde).
+union(cd, ade, acde).
+union(cd, bde, bcde).
+union(cd, abde, abcde).
+union(cd, cde, cde).
+union(cd, acde, acde).
+union(cd, bcde, bcde).
+union(cd, abcde, abcde).
+union(acd, a, acd).
+union(acd, b, abcd).
+union(acd, ab, abcd).
+union(acd, c, acd).
+union(acd, ac, acd).
+union(acd, bc, abcd).
+union(acd, abc, abcd).
+union(acd, d, acd).
+union(acd, ad, acd).
+union(acd, bd, abcd).
+union(acd, abd, abcd).
+union(acd, cd, acd).
+union(acd, acd, acd).
+union(acd, bcd, abcd).
+union(acd, abcd, abcd).
+union(acd, e, acde).
+union(acd, ae, acde).
+union(acd, be, abcde).
+union(acd, abe, abcde).
+union(acd, ce, acde).
+union(acd, ace, acde).
+union(acd, bce, abcde).
+union(acd, abce, abcde).
+union(acd, de, acde).
+union(acd, ade, acde).
+union(acd, bde, abcde).
+union(acd, abde, abcde).
+union(acd, cde, acde).
+union(acd, acde, acde).
+union(acd, bcde, abcde).
+union(acd, abcde, abcde).
+union(bcd, a, abcd).
+union(bcd, b, bcd).
+union(bcd, ab, abcd).
+union(bcd, c, bcd).
+union(bcd, ac, abcd).
+union(bcd, bc, bcd).
+union(bcd, abc, abcd).
+union(bcd, d, bcd).
+union(bcd, ad, abcd).
+union(bcd, bd, bcd).
+union(bcd, abd, abcd).
+union(bcd, cd, bcd).
+union(bcd, acd, abcd).
+union(bcd, bcd, bcd).
+union(bcd, abcd, abcd).
+union(bcd, e, bcde).
+union(bcd, ae, abcde).
+union(bcd, be, bcde).
+union(bcd, abe, abcde).
+union(bcd, ce, bcde).
+union(bcd, ace, abcde).
+union(bcd, bce, bcde).
+union(bcd, abce, abcde).
+union(bcd, de, bcde).
+union(bcd, ade, abcde).
+union(bcd, bde, bcde).
+union(bcd, abde, abcde).
+union(bcd, cde, bcde).
+union(bcd, acde, abcde).
+union(bcd, bcde, bcde).
+union(bcd, abcde, abcde).
+union(abcd, a, abcd).
+union(abcd, b, abcd).
+union(abcd, ab, abcd).
+union(abcd, c, abcd).
+union(abcd, ac, abcd).
+union(abcd, bc, abcd).
+union(abcd, abc, abcd).
+union(abcd, d, abcd).
+union(abcd, ad, abcd).
+union(abcd, bd, abcd).
+union(abcd, abd, abcd).
+union(abcd, cd, abcd).
+union(abcd, acd, abcd).
+union(abcd, bcd, abcd).
+union(abcd, abcd, abcd).
+union(abcd, e, abcde).
+union(abcd, ae, abcde).
+union(abcd, be, abcde).
+union(abcd, abe, abcde).
+union(abcd, ce, abcde).
+union(abcd, ace, abcde).
+union(abcd, bce, abcde).
+union(abcd, abce, abcde).
+union(abcd, de, abcde).
+union(abcd, ade, abcde).
+union(abcd, bde, abcde).
+union(abcd, abde, abcde).
+union(abcd, cde, abcde).
+union(abcd, acde, abcde).
+union(abcd, bcde, abcde).
+union(abcd, abcde, abcde).
+union(e, a, ae).
+union(e, b, be).
+union(e, ab, abe).
+union(e, c, ce).
+union(e, ac, ace).
+union(e, bc, bce).
+union(e, abc, abce).
+union(e, d, de).
+union(e, ad, ade).
+union(e, bd, bde).
+union(e, abd, abde).
+union(e, cd, cde).
+union(e, acd, acde).
+union(e, bcd, bcde).
+union(e, abcd, abcde).
+union(e, e, e).
+union(e, ae, ae).
+union(e, be, be).
+union(e, abe, abe).
+union(e, ce, ce).
+union(e, ace, ace).
+union(e, bce, bce).
+union(e, abce, abce).
+union(e, de, de).
+union(e, ade, ade).
+union(e, bde, bde).
+union(e, abde, abde).
+union(e, cde, cde).
+union(e, acde, acde).
+union(e, bcde, bcde).
+union(e, abcde, abcde).
+union(ae, a, ae).
+union(ae, b, abe).
+union(ae, ab, abe).
+union(ae, c, ace).
+union(ae, ac, ace).
+union(ae, bc, abce).
+union(ae, abc, abce).
+union(ae, d, ade).
+union(ae, ad, ade).
+union(ae, bd, abde).
+union(ae, abd, abde).
+union(ae, cd, acde).
+union(ae, acd, acde).
+union(ae, bcd, abcde).
+union(ae, abcd, abcde).
+union(ae, e, ae).
+union(ae, ae, ae).
+union(ae, be, abe).
+union(ae, abe, abe).
+union(ae, ce, ace).
+union(ae, ace, ace).
+union(ae, bce, abce).
+union(ae, abce, abce).
+union(ae, de, ade).
+union(ae, ade, ade).
+union(ae, bde, abde).
+union(ae, abde, abde).
+union(ae, cde, acde).
+union(ae, acde, acde).
+union(ae, bcde, abcde).
+union(ae, abcde, abcde).
+union(be, a, abe).
+union(be, b, be).
+union(be, ab, abe).
+union(be, c, bce).
+union(be, ac, abce).
+union(be, bc, bce).
+union(be, abc, abce).
+union(be, d, bde).
+union(be, ad, abde).
+union(be, bd, bde).
+union(be, abd, abde).
+union(be, cd, bcde).
+union(be, acd, abcde).
+union(be, bcd, bcde).
+union(be, abcd, abcde).
+union(be, e, be).
+union(be, ae, abe).
+union(be, be, be).
+union(be, abe, abe).
+union(be, ce, bce).
+union(be, ace, abce).
+union(be, bce, bce).
+union(be, abce, abce).
+union(be, de, bde).
+union(be, ade, abde).
+union(be, bde, bde).
+union(be, abde, abde).
+union(be, cde, bcde).
+union(be, acde, abcde).
+union(be, bcde, bcde).
+union(be, abcde, abcde).
+union(abe, a, abe).
+union(abe, b, abe).
+union(abe, ab, abe).
+union(abe, c, abce).
+union(abe, ac, abce).
+union(abe, bc, abce).
+union(abe, abc, abce).
+union(abe, d, abde).
+union(abe, ad, abde).
+union(abe, bd, abde).
+union(abe, abd, abde).
+union(abe, cd, abcde).
+union(abe, acd, abcde).
+union(abe, bcd, abcde).
+union(abe, abcd, abcde).
+union(abe, e, abe).
+union(abe, ae, abe).
+union(abe, be, abe).
+union(abe, abe, abe).
+union(abe, ce, abce).
+union(abe, ace, abce).
+union(abe, bce, abce).
+union(abe, abce, abce).
+union(abe, de, abde).
+union(abe, ade, abde).
+union(abe, bde, abde).
+union(abe, abde, abde).
+union(abe, cde, abcde).
+union(abe, acde, abcde).
+union(abe, bcde, abcde).
+union(abe, abcde, abcde).
+union(ce, a, ace).
+union(ce, b, bce).
+union(ce, ab, abce).
+union(ce, c, ce).
+union(ce, ac, ace).
+union(ce, bc, bce).
+union(ce, abc, abce).
+union(ce, d, cde).
+union(ce, ad, acde).
+union(ce, bd, bcde).
+union(ce, abd, abcde).
+union(ce, cd, cde).
+union(ce, acd, acde).
+union(ce, bcd, bcde).
+union(ce, abcd, abcde).
+union(ce, e, ce).
+union(ce, ae, ace).
+union(ce, be, bce).
+union(ce, abe, abce).
+union(ce, ce, ce).
+union(ce, ace, ace).
+union(ce, bce, bce).
+union(ce, abce, abce).
+union(ce, de, cde).
+union(ce, ade, acde).
+union(ce, bde, bcde).
+union(ce, abde, abcde).
+union(ce, cde, cde).
+union(ce, acde, acde).
+union(ce, bcde, bcde).
+union(ce, abcde, abcde).
+union(ace, a, ace).
+union(ace, b, abce).
+union(ace, ab, abce).
+union(ace, c, ace).
+union(ace, ac, ace).
+union(ace, bc, abce).
+union(ace, abc, abce).
+union(ace, d, acde).
+union(ace, ad, acde).
+union(ace, bd, abcde).
+union(ace, abd, abcde).
+union(ace, cd, acde).
+union(ace, acd, acde).
+union(ace, bcd, abcde).
+union(ace, abcd, abcde).
+union(ace, e, ace).
+union(ace, ae, ace).
+union(ace, be, abce).
+union(ace, abe, abce).
+union(ace, ce, ace).
+union(ace, ace, ace).
+union(ace, bce, abce).
+union(ace, abce, abce).
+union(ace, de, acde).
+union(ace, ade, acde).
+union(ace, bde, abcde).
+union(ace, abde, abcde).
+union(ace, cde, acde).
+union(ace, acde, acde).
+union(ace, bcde, abcde).
+union(ace, abcde, abcde).
+union(bce, a, abce).
+union(bce, b, bce).
+union(bce, ab, abce).
+union(bce, c, bce).
+union(bce, ac, abce).
+union(bce, bc, bce).
+union(bce, abc, abce).
+union(bce, d, bcde).
+union(bce, ad, abcde).
+union(bce, bd, bcde).
+union(bce, abd, abcde).
+union(bce, cd, bcde).
+union(bce, acd, abcde).
+union(bce, bcd, bcde).
+union(bce, abcd, abcde).
+union(bce, e, bce).
+union(bce, ae, abce).
+union(bce, be, bce).
+union(bce, abe, abce).
+union(bce, ce, bce).
+union(bce, ace, abce).
+union(bce, bce, bce).
+union(bce, abce, abce).
+union(bce, de, bcde).
+union(bce, ade, abcde).
+union(bce, bde, bcde).
+union(bce, abde, abcde).
+union(bce, cde, bcde).
+union(bce, acde, abcde).
+union(bce, bcde, bcde).
+union(bce, abcde, abcde).
+union(abce, a, abce).
+union(abce, b, abce).
+union(abce, ab, abce).
+union(abce, c, abce).
+union(abce, ac, abce).
+union(abce, bc, abce).
+union(abce, abc, abce).
+union(abce, d, abcde).
+union(abce, ad, abcde).
+union(abce, bd, abcde).
+union(abce, abd, abcde).
+union(abce, cd, abcde).
+union(abce, acd, abcde).
+union(abce, bcd, abcde).
+union(abce, abcd, abcde).
+union(abce, e, abce).
+union(abce, ae, abce).
+union(abce, be, abce).
+union(abce, abe, abce).
+union(abce, ce, abce).
+union(abce, ace, abce).
+union(abce, bce, abce).
+union(abce, abce, abce).
+union(abce, de, abcde).
+union(abce, ade, abcde).
+union(abce, bde, abcde).
+union(abce, abde, abcde).
+union(abce, cde, abcde).
+union(abce, acde, abcde).
+union(abce, bcde, abcde).
+union(abce, abcde, abcde).
+union(de, a, ade).
+union(de, b, bde).
+union(de, ab, abde).
+union(de, c, cde).
+union(de, ac, acde).
+union(de, bc, bcde).
+union(de, abc, abcde).
+union(de, d, de).
+union(de, ad, ade).
+union(de, bd, bde).
+union(de, abd, abde).
+union(de, cd, cde).
+union(de, acd, acde).
+union(de, bcd, bcde).
+union(de, abcd, abcde).
+union(de, e, de).
+union(de, ae, ade).
+union(de, be, bde).
+union(de, abe, abde).
+union(de, ce, cde).
+union(de, ace, acde).
+union(de, bce, bcde).
+union(de, abce, abcde).
+union(de, de, de).
+union(de, ade, ade).
+union(de, bde, bde).
+union(de, abde, abde).
+union(de, cde, cde).
+union(de, acde, acde).
+union(de, bcde, bcde).
+union(de, abcde, abcde).
+union(ade, a, ade).
+union(ade, b, abde).
+union(ade, ab, abde).
+union(ade, c, acde).
+union(ade, ac, acde).
+union(ade, bc, abcde).
+union(ade, abc, abcde).
+union(ade, d, ade).
+union(ade, ad, ade).
+union(ade, bd, abde).
+union(ade, abd, abde).
+union(ade, cd, acde).
+union(ade, acd, acde).
+union(ade, bcd, abcde).
+union(ade, abcd, abcde).
+union(ade, e, ade).
+union(ade, ae, ade).
+union(ade, be, abde).
+union(ade, abe, abde).
+union(ade, ce, acde).
+union(ade, ace, acde).
+union(ade, bce, abcde).
+union(ade, abce, abcde).
+union(ade, de, ade).
+union(ade, ade, ade).
+union(ade, bde, abde).
+union(ade, abde, abde).
+union(ade, cde, acde).
+union(ade, acde, acde).
+union(ade, bcde, abcde).
+union(ade, abcde, abcde).
+union(bde, a, abde).
+union(bde, b, bde).
+union(bde, ab, abde).
+union(bde, c, bcde).
+union(bde, ac, abcde).
+union(bde, bc, bcde).
+union(bde, abc, abcde).
+union(bde, d, bde).
+union(bde, ad, abde).
+union(bde, bd, bde).
+union(bde, abd, abde).
+union(bde, cd, bcde).
+union(bde, acd, abcde).
+union(bde, bcd, bcde).
+union(bde, abcd, abcde).
+union(bde, e, bde).
+union(bde, ae, abde).
+union(bde, be, bde).
+union(bde, abe, abde).
+union(bde, ce, bcde).
+union(bde, ace, abcde).
+union(bde, bce, bcde).
+union(bde, abce, abcde).
+union(bde, de, bde).
+union(bde, ade, abde).
+union(bde, bde, bde).
+union(bde, abde, abde).
+union(bde, cde, bcde).
+union(bde, acde, abcde).
+union(bde, bcde, bcde).
+union(bde, abcde, abcde).
+union(abde, a, abde).
+union(abde, b, abde).
+union(abde, ab, abde).
+union(abde, c, abcde).
+union(abde, ac, abcde).
+union(abde, bc, abcde).
+union(abde, abc, abcde).
+union(abde, d, abde).
+union(abde, ad, abde).
+union(abde, bd, abde).
+union(abde, abd, abde).
+union(abde, cd, abcde).
+union(abde, acd, abcde).
+union(abde, bcd, abcde).
+union(abde, abcd, abcde).
+union(abde, e, abde).
+union(abde, ae, abde).
+union(abde, be, abde).
+union(abde, abe, abde).
+union(abde, ce, abcde).
+union(abde, ace, abcde).
+union(abde, bce, abcde).
+union(abde, abce, abcde).
+union(abde, de, abde).
+union(abde, ade, abde).
+union(abde, bde, abde).
+union(abde, abde, abde).
+union(abde, cde, abcde).
+union(abde, acde, abcde).
+union(abde, bcde, abcde).
+union(abde, abcde, abcde).
+union(cde, a, acde).
+union(cde, b, bcde).
+union(cde, ab, abcde).
+union(cde, c, cde).
+union(cde, ac, acde).
+union(cde, bc, bcde).
+union(cde, abc, abcde).
+union(cde, d, cde).
+union(cde, ad, acde).
+union(cde, bd, bcde).
+union(cde, abd, abcde).
+union(cde, cd, cde).
+union(cde, acd, acde).
+union(cde, bcd, bcde).
+union(cde, abcd, abcde).
+union(cde, e, cde).
+union(cde, ae, acde).
+union(cde, be, bcde).
+union(cde, abe, abcde).
+union(cde, ce, cde).
+union(cde, ace, acde).
+union(cde, bce, bcde).
+union(cde, abce, abcde).
+union(cde, de, cde).
+union(cde, ade, acde).
+union(cde, bde, bcde).
+union(cde, abde, abcde).
+union(cde, cde, cde).
+union(cde, acde, acde).
+union(cde, bcde, bcde).
+union(cde, abcde, abcde).
+union(acde, a, acde).
+union(acde, b, abcde).
+union(acde, ab, abcde).
+union(acde, c, acde).
+union(acde, ac, acde).
+union(acde, bc, abcde).
+union(acde, abc, abcde).
+union(acde, d, acde).
+union(acde, ad, acde).
+union(acde, bd, abcde).
+union(acde, abd, abcde).
+union(acde, cd, acde).
+union(acde, acd, acde).
+union(acde, bcd, abcde).
+union(acde, abcd, abcde).
+union(acde, e, acde).
+union(acde, ae, acde).
+union(acde, be, abcde).
+union(acde, abe, abcde).
+union(acde, ce, acde).
+union(acde, ace, acde).
+union(acde, bce, abcde).
+union(acde, abce, abcde).
+union(acde, de, acde).
+union(acde, ade, acde).
+union(acde, bde, abcde).
+union(acde, abde, abcde).
+union(acde, cde, acde).
+union(acde, acde, acde).
+union(acde, bcde, abcde).
+union(acde, abcde, abcde).
+union(bcde, a, abcde).
+union(bcde, b, bcde).
+union(bcde, ab, abcde).
+union(bcde, c, bcde).
+union(bcde, ac, abcde).
+union(bcde, bc, bcde).
+union(bcde, abc, abcde).
+union(bcde, d, bcde).
+union(bcde, ad, abcde).
+union(bcde, bd, bcde).
+union(bcde, abd, abcde).
+union(bcde, cd, bcde).
+union(bcde, acd, abcde).
+union(bcde, bcd, bcde).
+union(bcde, abcd, abcde).
+union(bcde, e, bcde).
+union(bcde, ae, abcde).
+union(bcde, be, bcde).
+union(bcde, abe, abcde).
+union(bcde, ce, bcde).
+union(bcde, ace, abcde).
+union(bcde, bce, bcde).
+union(bcde, abce, abcde).
+union(bcde, de, bcde).
+union(bcde, ade, abcde).
+union(bcde, bde, bcde).
+union(bcde, abde, abcde).
+union(bcde, cde, bcde).
+union(bcde, acde, abcde).
+union(bcde, bcde, bcde).
+union(bcde, abcde, abcde).
+union(abcde, a, abcde).
+union(abcde, b, abcde).
+union(abcde, ab, abcde).
+union(abcde, c, abcde).
+union(abcde, ac, abcde).
+union(abcde, bc, abcde).
+union(abcde, abc, abcde).
+union(abcde, d, abcde).
+union(abcde, ad, abcde).
+union(abcde, bd, abcde).
+union(abcde, abd, abcde).
+union(abcde, cd, abcde).
+union(abcde, acd, abcde).
+union(abcde, bcd, abcde).
+union(abcde, abcd, abcde).
+union(abcde, e, abcde).
+union(abcde, ae, abcde).
+union(abcde, be, abcde).
+union(abcde, abe, abcde).
+union(abcde, ce, abcde).
+union(abcde, ace, abcde).
+union(abcde, bce, abcde).
+union(abcde, abce, abcde).
+union(abcde, de, abcde).
+union(abcde, ade, abcde).
+union(abcde, bde, abcde).
+union(abcde, abde, abcde).
+union(abcde, cde, abcde).
+union(abcde, acde, abcde).
+union(abcde, bcde, abcde).
+union(abcde, abcde, abcde).
+
+fd(a, bc).
+fd(cd, e).
+fd(b, d).
+fd(e, a).
+
+fd(A, B) :- subset(B, A).
+fd(A, C) :- fd(A, B), fd(B, C).
+fd(AC, BC) :- fd(A, B), union(A, C, AC), union(B, C, BC).
+
+fd(A, B)?
+fd(A, abcde)?

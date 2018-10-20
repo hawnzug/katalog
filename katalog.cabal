@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 34ba1bd4f8ac99b8776a1a56b4cb67c4dc604a3dec762bd179abe2cabd5c6435
+-- hash: 7dd573a44ad0c51891300d97f35672c2d9aab51c4cbd1bd1e3c8141cd92e2b81
 
 name:           katalog
 version:        0.1.0.0
@@ -66,8 +66,10 @@ test-suite katalog-tests
       QuickCheck
     , base
     , containers
+    , filepath
     , katalog
     , tasty
+    , tasty-golden
     , tasty-hunit
     , tasty-quickcheck
     , text
