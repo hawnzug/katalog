@@ -8,8 +8,8 @@ import Data.Map (Map)
 import Data.Set (Set)
 import qualified Data.Map as Map
 import qualified Data.Set as Set
-import Data.Traversable (mapAccumL)
 import Data.Maybe (catMaybes)
+import Control.Monad (foldM)
 
 type Literal = Text
 type Variable = Text
@@ -33,37 +33,27 @@ data Predicate = Predicate
 type Database = Map Text Relation
 
 query :: Database -> Clause -> Relation
-query db clause = Set.fromList $ map (go $ clauseHead clause) envs
-  where
-    envs :: [UnifyEnv]
-    envs = multiMatch (clauseBody clause) db
-    go :: Predicate -> UnifyEnv -> Tuple
-    go p env = map (f env) (predicateParams p)
-    f :: UnifyEnv -> Parameter -> Literal
-    f env (Left v) = env Map.! v
-    f _ (Right l) = l
+query db (Clause (Predicate _ params) body) =
+  Set.fromList $ map (go params) (multiMatch body db)
+  where go params env = map (either (env Map.!) id) params
 
 singleMatch :: [Parameter] -> Relation -> UnifyEnv -> [UnifyEnv]
-singleMatch params r env = catMaybes $ map (\tuple -> gotu params tuple env) (Set.toList r)
+singleMatch params r env = catMaybes $ map (goto env params) (Set.toList r)
   where
-    go :: Parameter -> Literal -> UnifyEnv -> Maybe UnifyEnv
-    go (Right l) lit env = if l == lit then Just env else Nothing
-    go (Left v) lit env = case Map.lookup v env of
+    go :: UnifyEnv -> (Parameter, Literal) -> Maybe UnifyEnv
+    go env (Right l, lit) = if l == lit then Just env else Nothing
+    go env (Left v, lit)  = case Map.lookup v env of
       Just l -> if l == lit then Just env else Nothing
       Nothing -> Just $ Map.insert v lit env
-    gotu :: [Parameter] -> Tuple -> UnifyEnv -> Maybe UnifyEnv
-    gotu [] [] env = Just env
-    gotu (p:ps) (l:ls) env = do
-      env' <- go p l env
-      gotu ps ls env'
-    gotu _ _ _ = error "Predicate and tuple's arity should be the same"
+    goto :: UnifyEnv -> [Parameter] -> Tuple -> Maybe UnifyEnv
+    goto env ps ls = foldM go env (zip ps ls)
 
 multiMatch :: [Predicate] -> Database -> [UnifyEnv]
-multiMatch ps db = fst $ mapAccumL single [Map.empty] ps
+multiMatch ps db = foldM single Map.empty ps
   where
     getRelation p = db Map.! (predicateName p)
-    single :: [UnifyEnv] -> Predicate -> ([UnifyEnv], ())
-    single envs p = (concatMap (singleMatch (predicateParams p) (getRelation p)) envs, ())
+    single :: UnifyEnv -> Predicate -> [UnifyEnv]
+    single env p = singleMatch (predicateParams p) (getRelation p) env
 
 databaseInsert :: Text -> Relation -> Database -> Database
 databaseInsert name rel db = Map.insertWith Set.union name rel db
