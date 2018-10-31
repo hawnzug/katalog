@@ -1,5 +1,5 @@
 {-# Language OverloadedStrings #-}
-{-# Language TupleSections #-}
+{-# Language LambdaCase #-}
 
 module Katalog.Core where
 
@@ -22,8 +22,13 @@ type Parameter = Either Variable Literal
 
 data Clause = Clause
   { clauseHead :: Predicate
-  , clauseBody :: [Predicate]
+  , clauseBody :: [Term]
   } deriving (Show, Eq, Ord)
+
+data Term
+  = TermPre Predicate
+  | TermNeg Predicate
+  deriving (Show, Eq, Ord)
 
 data Predicate = Predicate
   { predicateName :: Text
@@ -48,12 +53,20 @@ singleMatch params r env = catMaybes $ map (goto env params) (Set.toList r)
     goto :: UnifyEnv -> [Parameter] -> Tuple -> Maybe UnifyEnv
     goto env ps ls = foldM go env (zip ps ls)
 
-multiMatch :: [Predicate] -> Database -> [UnifyEnv]
-multiMatch ps db = foldM single Map.empty ps
+singleNotMatch :: [Parameter] -> Relation -> UnifyEnv -> [UnifyEnv]
+singleNotMatch params r env = if Set.member lits r then [] else [env]
+  where
+    lits = flip map params $ \case
+      Right l -> l
+      Left v -> env Map.! v
+
+multiMatch :: [Term] -> Database -> [UnifyEnv]
+multiMatch ps db = foldM f Map.empty ps
   where
     getRelation p = db Map.! (predicateName p)
-    single :: UnifyEnv -> Predicate -> [UnifyEnv]
-    single env p = singleMatch (predicateParams p) (getRelation p) env
+    f env (TermPre p) = h singleMatch env p
+    f env (TermNeg p) = h singleNotMatch env p
+    h g env p = g (predicateParams p) (getRelation p) env
 
 databaseInsert :: Text -> Relation -> Database -> Database
 databaseInsert name rel db = Map.insertWith Set.union name rel db

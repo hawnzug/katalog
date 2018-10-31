@@ -14,6 +14,10 @@ instance Pretty Predicate where
     where
       p = punctuate comma $ pretty . either id id <$> params
 
+instance Pretty Term where
+  pretty (TermPre p) = pretty p
+  pretty (TermNeg p) = "not" <+> pretty p
+
 instance Pretty Clause where
   pretty (Clause head []) = pretty head <+> dot
   pretty (Clause head body) = pretty head <+> ":-" <+> (align $ sep $ punctuate comma (pretty <$> body))
@@ -35,5 +39,5 @@ renderDatabase = render . prettyDatabase
 renderRelation :: Relation -> Text
 renderRelation = render . prettyRelation
 
-renderQuery :: [Predicate] -> Text
-renderQuery ps = render $ sep $ punctuate comma (pretty <$> ps)
+renderQuery :: [Term] -> Text
+renderQuery ts = render $ sep $ punctuate comma (pretty <$> ts)

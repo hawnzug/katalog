@@ -1,0 +1,16 @@
+def(1,a).
+use(2,a). def(2,b).
+use(3,b). use(3,c). def(3,c).
+use(4,b). def(4,a).
+use(5,a).
+use(6,c).
+succ(1,2). succ(2,3). succ(3,4). succ(4,5). succ(5,6). succ(5,2).
+
+out(N,V) :- succ(N,N1), in(N1,V).
+
+in(N,V) :- use(N,V).
+
+in(N,V) :- out(N,V), not def(N,V).
+
+in(N,V)?
+out(N,V)?

@@ -1,4 +1,5 @@
 {-# Language NamedFieldPuns #-}
+{-# Language LambdaCase #-}
 module Katalog.Preprocess where
 
 import Katalog.Core
@@ -11,9 +12,11 @@ import qualified Data.Set as Set
 
 checkHeadVariables :: Clause -> Bool
 checkHeadVariables Clause{clauseHead, clauseBody} = null headVars || all (`elem` bodyVars) headVars
-  where headVars = allVars clauseHead
+  where headVars = lefts $ predicateParams clauseHead
         bodyVars = concatMap allVars clauseBody
-        allVars p = lefts $ predicateParams p
+        allVars = lefts . \case
+          TermPre p -> predicateParams p
+          TermNeg p -> []
 
 -- all (null . clauseBody) clauses == True
 -- all checkHeadVariables clauses == True

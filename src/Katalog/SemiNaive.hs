@@ -1,4 +1,5 @@
 {-# Language OverloadedStrings #-}
+{-# Language LambdaCase #-}
 module Katalog.SemiNaive where
 
 import qualified Data.Map as Map
@@ -20,9 +21,12 @@ eval db = Set.unions . map (query db)
 substClause :: Clause -> [Clause]
 substClause (Clause h body) = map (Clause h) (go body)
   where
-    go :: [Predicate] -> [[Predicate]]
+    go :: [Term] -> [[Term]]
     go [] = []
-    go (p:ps) = ((subst '_' p):ps) : (map (subst '?' p:) (go ps))
+    go (t:ts) = case t of
+      TermPre p -> ((TermPre $ subst '_' p):ts) :
+                   (map ((TermPre $ subst '?' p):) (go ts))
+      _ -> map (t:) (go ts)
     subst c (Predicate name params) = Predicate (Text.cons c name) params
 
 deltaEval :: DBDBDB -> (Set Text, [Clause]) -> Relation
@@ -47,11 +51,17 @@ run db rules = fst $ iters (Map.unionWith Set.union db delta, delta) deltaRules
         deltaRules = Map.map f rules
           where f clauses = (g clauses, concatMap substClause clauses)
                 g clauses = Set.fromList $
-                            concatMap (map predicateName . clauseBody) clauses
+                            concatMap (map name . clauseBody) clauses
+                name = predicateName . \case
+                  TermPre p -> p
+                  TermNeg p -> p
+                  
 
-match :: Database -> [Predicate] -> Relation
-match db ps = query db dummyClause
+match :: Database -> [Term] -> Relation
+match db ts = query db dummyClause
   where
-    dummyClause = Clause dummyHead ps
-    dummyHead = Predicate "__dummy__" $ map Left (concatMap allVars ps)
-    allVars = lefts . predicateParams
+    dummyClause = Clause dummyHead ts
+    dummyHead = Predicate "__dummy__" $ map Left (concatMap allVars ts)
+    allVars = lefts . predicateParams . \case
+      TermPre p -> p
+      TermNeg p -> p

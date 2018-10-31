@@ -1,7 +1,7 @@
 {-# Language OverloadedStrings #-}
 module Katalog.Parser where
 
-import Katalog.Core (Parameter, Predicate(..), Clause(..))
+import Katalog.Core (Parameter, Predicate(..), Clause(..), Term(..))
 import Control.Monad.Combinators
 import Data.Text (Text)
 import Data.Char (isLower)
@@ -50,16 +50,19 @@ predicate = do
   ps <- parens (param `sepBy1` symbol ",")
   return $ Predicate n ps
 
+term :: Parser Term
+term = (TermNeg <$> (Mega.try (symbol "not") *> predicate)) <|> (TermPre <$> predicate)
+
 clause :: Parser Clause
 clause = do
   hd <- predicate
-  tl <- (Mega.try (symbol ":-") >> predicate `sepBy1` symbol ",") <|> return []
+  tl <- (Mega.try (symbol ":-") >> term `sepBy1` symbol ",") <|> return []
   symbol "."
   return $ Clause hd tl
 
-type Query = [Predicate]
+type Query = [Term]
 query :: Parser Query
-query = predicate `sepBy1` symbol "," <* symbol "?"
+query = term `sepBy1` symbol "," <* symbol "?"
 
 line :: Parser (Either Query Clause)
 line = (Left <$> Mega.try query) <|> (Right <$> clause)

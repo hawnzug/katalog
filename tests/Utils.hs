@@ -41,4 +41,4 @@ genFact = Clause <$> genFactPredicate <*> pure []
 
 genRule :: Gen Clause
 genRule = Clause <$> genRulePredicate <*>
-  listOf (oneof [genRulePredicate, genFactPredicate])
+  listOf (TermPre <$> oneof [genRulePredicate, genFactPredicate])
