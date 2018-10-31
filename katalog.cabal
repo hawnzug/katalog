@@ -1,8 +1,10 @@
--- This file has been generated from package.yaml by hpack version 0.28.2.
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.0.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 7dd573a44ad0c51891300d97f35672c2d9aab51c4cbd1bd1e3c8141cd92e2b81
+-- hash: 61e966a4ff08a693432d687e7f3d2b53a58a27eb2f19669d574be9061ae6aded
 
 name:           katalog
 version:        0.1.0.0
@@ -14,7 +16,6 @@ copyright:      hawnzug
 license:        BSD3
 license-file:   LICENSE
 build-type:     Simple
-cabal-version:  >= 1.10
 extra-source-files:
     README.md
 

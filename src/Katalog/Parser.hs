@@ -30,17 +30,23 @@ symbol = Lexer.symbol spaceConsumer
 parens :: Parser a -> Parser a
 parens = between (symbol "(") (symbol ")")
 
-name :: Parser Text
-name = lexeme $ Text.pack <$> many Mega.Char.letterChar
+literal :: Parser Text
+literal = lexeme $ Text.pack <$> name
+  where name = (:) <$> Mega.Char.lowerChar <*> many Mega.Char.alphaNumChar
+
+variable :: Parser Text
+variable = lexeme $ Text.pack <$> name
+  where name = (:) <$> Mega.Char.upperChar <*> many Mega.Char.alphaNumChar
+
+number :: Parser Text
+number = lexeme $ Text.pack <$> some Mega.Char.digitChar
 
 param :: Parser Parameter
-param = do
-  n <- name
-  return $ (if isLower (Text.head n) then Right else Left) n
+param = (Right <$> (number <|> literal)) <|> (Left <$> variable)
 
 predicate :: Parser Predicate
 predicate = do
-  n <- name
+  n <- literal
   ps <- parens (param `sepBy1` symbol ",")
   return $ Predicate n ps
 
